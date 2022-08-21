@@ -9,19 +9,21 @@ const Header = () => {
   <header>
     <Navbar bg="dark" variant='dark' expand="lg" collapseOnSelect>
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">Dinosaur Toybox</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <Nav.Link href="#link">Open Toybox</Nav.Link>
+            <Nav.Link href="#link">Add Dinosaur to Toybox</Nav.Link>
+            <Nav.Link href="#link">Remove Dinosaur From Toybox</Nav.Link>
+            <NavDropdown title="More" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Learn About Dinosaurs</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Watch Dinosaurs</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item href="#action/3.4">Find Dinosaur Events Near You
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
