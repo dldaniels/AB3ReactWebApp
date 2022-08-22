@@ -1,6 +1,6 @@
 import React from 'react';
-
-import React from 'react'
+import { Container } from 'react-bootstrap';
+import Table from './Table'
 
 const ToyBox = () => {
   return (
@@ -10,8 +10,9 @@ const ToyBox = () => {
         <h1>Dinosaur Toybox</h1>
         </Container>
         <div>
-        <h1>The List</h1>
+        <h1>Available Dinosaurs</h1>
         </div>
+        <div><Table /></div>
       </main> 
     </div>
   )

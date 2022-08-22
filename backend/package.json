@@ -1,0 +1,30 @@
+{
+  "name": "ab3-webapp-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "server": "nodemon backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dldaniels/AB3ReactWebApp.git"
+  },
+  "author": "David Daniels",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dldaniels/AB3ReactWebApp/issues"
+  },
+  "homepage": "https://github.com/dldaniels/AB3ReactWebApp#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

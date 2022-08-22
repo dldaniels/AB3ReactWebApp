@@ -4,17 +4,19 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+
 const Header = () => {
   return ( 
   <header>
     <Navbar bg="dark" variant='dark' expand="lg" collapseOnSelect>
       <Container>
-        <Navbar.Brand href="#home">Dinosaur Toybox</Navbar.Brand>
+        <Navbar.Brand href="/">Dinosaur Toybox</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#toybox">Open Toybox</Nav.Link>
+            {/* <Link className="nav-link active" aria-current="page" to="/">Home</Link> */}
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="toybox">Open Toybox</Nav.Link>
             <Nav.Link href="#link">Add Dinosaur to Toybox</Nav.Link>
             <Nav.Link href="#link">Remove Dinosaur From Toybox</Nav.Link>
             <NavDropdown title="More" id="basic-nav-dropdown">
