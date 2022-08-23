@@ -8,7 +8,7 @@ const db =mysql.createPool({
     host: '127.0.0.1',
     user: 'dinosaur_user',
     password: 'dinosaur',
-    database: 'dinosaur'
+    database: 'dinosaur_db'
 });
 
 const app = express();
@@ -20,42 +20,49 @@ app.use(cors());
 
 app.get('/', (req, res) => res.send('API Running'));
 
+app.getDinosaurs('/dinosaurs', (req, res) => {
+    async function fetchDinosaurs(){
+        try {
+    const result = db.query('SELECT * FROM dinosaur_table');
+    return result;
+} catch(error) {
+    return error;
+}
+}
 
-app.get('/get', (req, res) => {
-    const SelectQuery = " SELECT * FROM dinosaur_table";
-    db.query(SelectQuery, (err, result) => {
-        res.send("Display complete")
-    })
-})
+// fetchDinosaurs()
+// .then(dbRes => {
+//     res.send(dbRes);
+// }) 
 
-// app.post("/create-dinosaur", (req, res) => {
-//     const name = req.body.name;
-//     const type = req.body.type;
-    // dinosaurs.push(dinosaur);
 
-    // res.send('Dinosaur is added to the database');
-    // const { name } = req.body.setDinosaurName;
-    // const { type } = req.body.setType;
-    // db.query( "INSERT INTO dinosaur_table (name, type) VALUES (?,?)",
-    //  [name, type], (err, result) => {
-    //     if(err){
-    //         console.log(err);
-    //     }else{
-    //         res.send("Dinosaur added");
-    //     }
-    // });
+});
     
-    // let sql = "INSERT INTO dinosaur (name, type) VALUES (?,?)"
-    // db.query(sql, [name, type], (err,result) =>{
+    
     
 
-    // if(err){
-    //     console.log(err);
-    // }else{
-    //     res.send(result);
-    // }
-// })
-// });
+app.post("/create-dinosaur", (req, res) => {
+    var response = "";
+    try{
+        console.log(req.body);
+        console.log (req.body.name);
+        console.log (req.body.type);
+        var added = controller.addDinosaur(req.body.name,req.body.type);
+    }catch (err){
+        res.json({ message: 'something is wrong', error : err.message});
+    }
+
+    }
+
+    db.query( "INSERT INTO dinosaur_table (name, type) VALUES (?,?)",
+     [name, type], (err, result) => {
+        if(err){
+            console.log(err);
+        }else{
+            res.send("Dinosaur added");
+        }
+    });
+});
 
 app.get("/display", (req, res) => {
 
@@ -71,14 +78,7 @@ app.get("/display", (req, res) => {
     });
 
 
-    app.post("/insert", (req, res) => {
-        const name = req.body.setDinosaurName;
-        const type = req.body.setType;
-        const InsertQuery = "INSERT INTO dinosaur_table (name, type) VALUES (?, ?)";
-        db.query(InsertQuery, [name, type], (err, result) => {
-          console.log(result)
-        })
-      })
+    
         
 
 
